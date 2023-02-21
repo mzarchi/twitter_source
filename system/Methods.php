@@ -28,7 +28,7 @@ class Methods
         $msg =  "Chat Id: <code>" . $chat_id . "</code>\n";
         $msg .= "Data: <code>" . $text . "</code>\n";
         $msg .= "Bot: @TwitterSourceBot";
-        self::$tg->sendMessage(_CHANNEL_REPORT, $msg);
+        self::$tg->sendMessage(_CHANNEL_REPORTS, $msg);
 
         self::$tg->setChatAction($chat_id);
         self::$db->insertUserData($chat_id);
@@ -169,7 +169,7 @@ class Methods
             $channel_msg = $data['data'][1];
             $channel_msg .= $data['data'][2];
             $channel_msg .= $data['data'][3];
-            self::$tg->sendPhoto(_CHANNEL, $data['profile'], $channel_msg);
+            self::$tg->sendPhoto(_CHANNEL_ARCHIVE, $data['profile'], $channel_msg);
 
             if ($chatId != "2052399630") {
                 $user_msg = $data['data'][1];
