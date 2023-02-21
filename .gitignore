@@ -2,6 +2,5 @@
 python/
 *.json
 *.session
-AbrahamTwitter.php
 get.php
 config.php

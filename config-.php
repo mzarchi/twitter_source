@@ -15,7 +15,9 @@ $config['host'] = "localhost";
 $config['user'] = "username";
 $config['pass'] = "password";
 $config['name'] = "database-name";
-$config['twtr'] = array(
+
+global $twitter_api;
+$twitter_api = array(
     array(
         'crname' => '01',
         'consumer_key' => '***',
