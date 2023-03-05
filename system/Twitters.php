@@ -18,7 +18,7 @@ class Twitter
 
   private function __construct()
   {
-    if (self::$tae == null) { 
+    if (self::$tae == null) {
       self::$tae = new TwitterAPIExchange($this->get_settings());
     }
   }
