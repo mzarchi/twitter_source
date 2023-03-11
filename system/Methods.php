@@ -198,9 +198,6 @@ class Methods
     {
         $data = self::$ta->get_status_data($id);
         self::$db->insert_tweet_json($id, json_encode($data));
-        // $myfile = fopen($id . ".txt", "w");
-        // fwrite($myfile, json_encode($data));
-        // fclose($myfile);
 
         $user = "◉ <a href='https://twitter.com/i/status/" . $id . "'>@" . $data->user->screen_name . "</a> (" . $data->user->name . ")";
         $text = preg_replace("@(https?://([-\w\.]+[-\w])+(:\d+)?(/([\w/_\.#-]*(\?\S+)?[^\.\s])?)?)@", '', $data->full_text);
