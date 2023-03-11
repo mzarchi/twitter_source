@@ -27,7 +27,6 @@ class Methods
     {
         $msg =  "Chat Id: <code>" . $chat_id . "</code>\n";
         $msg .= "Data: <code>" . $text . "</code>\n";
-        $msg .= "Bot: @TwitterSourceBot";
         self::$tg->sendMessage(_CHANNEL_REPORTS, $msg);
 
         self::$tg->setChatAction($chat_id);
@@ -142,11 +141,11 @@ class Methods
             $part01 .= "· <code>" . $time['date'] . ", " . $time['time'] . "</code> UTC\n \n";
 
             $part02 = "Twitter ID: #i" . $data->id . "\n";
-            $part02 .= "Check again: <a href='https://t.me/TwitterSourceBot?start=" . $data->id . "'>StartBot</a> · ";
+            $part02 .= "Check again: <a href='https://t.me/TwitterProfileBot?start=" . $data->id . "'>StartBot</a> · ";
             $part02 .= "Show <a href='https://twitter.com/intent/user?user_id=" . $data->id . "'>Profile</a> \n\n";
 
             $part03 = "Username: #" . $data->screen_name . "\n";
-            $part03 .= "Check again: <a href='https://t.me/TwitterSourceBot?start=" . $data->screen_name . "'>StartBot</a> · ";
+            $part03 .= "Check again: <a href='https://t.me/TwitterProfileBot?start=" . $data->screen_name . "'>StartBot</a> · ";
             $part03 .= "Show <a href='https://twitter.com/intent/user?screen_name=" . $data->screen_name . "'>Profile</a> \n\n";
 
             $result['data'][1] = $part01;
@@ -175,7 +174,7 @@ class Methods
                 $user_msg = $data['data'][1];
                 $user_msg .= $data['data'][2];
                 $user_msg .= $data['data'][3];
-                $user_msg .= 'Prepared by: @TwitterSourceBot';
+                $user_msg .= 'Prepared by: @TwitterProfileBot';
                 self::$tg->sendUserInfoMessageButton(
                     $chatId,
                     $data['profile'],
@@ -259,7 +258,7 @@ class Methods
                 $td = self::$ta->get_status_data($data[1]);
                 $sd = json_decode($td, true);
                 $time = $this->setTwitterTimeArray($sd['created_at']);
-                $msg = "username: <a href='https://t.me/TwitterSourceBot?start=" . $sd['user']['id'] . "'>@" . $sd['user']['screen_name'] . "</a>\n";
+                $msg = "username: <a href='https://t.me/TwitterProfileBot?start=" . $sd['user']['id'] . "'>@" . $sd['user']['screen_name'] . "</a>\n";
                 $msg .= "created: <code>" . $time['date'] . " " . $time['time'] . " UTC</code>\n";
                 $msg .= "device: " . $sd['source'] . "\n";
                 self::$tg->sendMessage($chat_id, $msg);

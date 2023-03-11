@@ -512,9 +512,10 @@ class Telegram
     public function sendUserInfoMessageButton($chatId, $fileId, $message, $id, $username)
     {
         $keyboardArray = array(
+            /*
             array(
                 array("text" => "Open Similar Accounts", "url" => "https://twitter.com/i/connect_people?user_id=" . $id),
-            ),
+            ),*/
             array(
                 array("text" => "Open Twitter-Id", "url" => "https://twitter.com/intent/user?user_id=" . $id),
                 array("text" => "Open Username", "url" => "https://twitter.com/intent/user?screen_name=" . $username)
